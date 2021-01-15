@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "downlevelIteration": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSources": true,
     "jsx": "react",
-    "lib": ["es2020", "dom", "dom.iterable"],
+    "lib": ["esnext", "dom", "dom.iterable"],
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitReturns": true,
@@ -14,7 +15,7 @@
     "pretty": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2019",
+    "target": "es5",
     "types": ["jest"]
   },
   "files": [
