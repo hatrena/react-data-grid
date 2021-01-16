@@ -142,7 +142,7 @@ export interface RowRendererProps<TRow, TSummaryRow = unknown> extends Omit<Reac
   eventBus: EventBus;
   enableCellRangeSelection?: boolean;
   onRowClick?: (rowIdx: number, row: TRow, column: CalculatedColumn<TRow, TSummaryRow>) => void;
-  rowClass?: string;
+  rowClass?: (row: TRow) => string | undefined;
 }
 
 export interface FilterRendererProps<TRow, TFilterValue = unknown, TSummaryRow = unknown> {

@@ -206,7 +206,7 @@ export default function AllFeatures() {
             width={width}
             height={height - 40}
             selectedRows={selectedRows}
-            rowClass="custom_class"
+            rowClass={row => row.id.includes('7') ? 'highlight' : undefined}
             onSelectedRowsChange={setSelectedRows}
             enableCellCopyPaste
             enableCellDragAndDrop

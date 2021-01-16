@@ -37,7 +37,7 @@ export default function Row<R, SR = unknown>({
     'rdg-row',
     `rdg-row-${rowIdx % 2 === 0 ? 'even' : 'odd'}`,
     { 'rdg-row-selected': isRowSelected },
-    rowClass,
+    rowClass?.(row),
     className
   );
 

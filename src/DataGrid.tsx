@@ -135,7 +135,7 @@ export interface DataGridProps<R, K extends keyof R, SR = unknown> {
   /** called before cell is set active, returns a boolean to determine whether cell is editable */
   onCheckCellIsEditable?: (event: CheckCellIsEditableEvent<R, SR>) => boolean;
 
-  rowClass?: string;
+  rowClass?: (row: R) => string | undefined;
 
   /**
    * Toggles and modes

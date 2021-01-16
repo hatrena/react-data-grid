@@ -11,6 +11,7 @@ type SharedDataGridProps<R, SR> = Pick<DataGridProps<R, never, SR>,
   | 'rowRenderer'
   | 'onRowClick'
   | 'onRowExpandToggle'
+  | 'rowClass'
 >;
 
 interface IRowRendererProps<R, SR> extends SharedDataGridProps<R, SR> {
@@ -21,7 +22,6 @@ interface IRowRendererProps<R, SR> extends SharedDataGridProps<R, SR> {
   enableCellRangeSelection?: boolean;
   eventBus: EventBus;
   isRowSelected: boolean;
-  rowClass?: string;
 }
 
 function RowRenderer<R, SR>({
@@ -32,6 +32,7 @@ function RowRenderer<R, SR>({
   row,
   rowGroupRenderer,
   rowRenderer,
+  rowClass,
   ...props
 }: IRowRendererProps<R, SR>) {
   const { __metaData } = row as RowData;
@@ -40,7 +41,7 @@ function RowRenderer<R, SR>({
     row,
     viewportColumns,
     isRowSelected: props.isRowSelected,
-    rowClass: props.rowClass,
+    rowClass,
     lastFrozenColumnIndex,
     eventBus,
     onRowClick: props.onRowClick,
